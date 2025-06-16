@@ -1,4 +1,4 @@
-import 'package:auvnet_ecommerce/core/helpers/images.dart';
+import 'package:auvnet_ecommerce/core/helpers/app_images.dart';
 import 'package:auvnet_ecommerce/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
