@@ -1,0 +1,34 @@
+import 'package:auvnet_ecommerce/features/onboarding/presentation/views/onboard_view.dart';
+import 'package:auvnet_ecommerce/features/splash/presentation/views/splash_view.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+abstract class AppRouter {
+  static const String kSplashView = '/';
+  static const String kOnBoardView = '/onboard';
+
+  static GoRouter router = GoRouter(
+    routes: [
+      GoRoute(
+        path: kSplashView,
+        builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: kOnBoardView,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const OnboardView(),
+            transitionsBuilder: (
+              context,
+              animation,
+              secondaryAnimation,
+              child,
+            ) {
+              return FadeTransition(opacity: animation, child: child);
+            },
+          );
+        },
+      ),
+    ],
+  );
+}
