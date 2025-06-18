@@ -1,6 +1,6 @@
 import 'package:auvnet_ecommerce/core/helpers/app_colors.dart';
-import 'package:auvnet_ecommerce/core/helpers/app_images.dart';
 import 'package:auvnet_ecommerce/core/helpers/constants.dart';
+import 'package:auvnet_ecommerce/core/helpers/images.dart';
 import 'package:auvnet_ecommerce/core/routing/app_router.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/manger/bloc/auth_bloc.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/custom_password_text_field.dart';

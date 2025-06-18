@@ -1,4 +1,4 @@
-import 'package:auvnet_ecommerce/core/helpers/app_images.dart';
+import 'package:auvnet_ecommerce/core/helpers/images.dart';
 import 'package:auvnet_ecommerce/core/routing/app_router.dart';
 import 'package:auvnet_ecommerce/features/onboarding/presentation/views/widgets/custom_button.dart';
 import 'package:auvnet_ecommerce/features/onboarding/presentation/views/widgets/onboard_pageview.dart';

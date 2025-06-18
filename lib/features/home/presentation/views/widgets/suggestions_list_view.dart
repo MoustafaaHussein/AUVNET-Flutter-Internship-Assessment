@@ -5,17 +5,21 @@ import 'package:flutter/material.dart';
 class SuggestionsListView extends StatelessWidget {
   const SuggestionsListView({super.key, required this.model});
   final List<SuggestionsModel> model;
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: model.length,
-      itemBuilder: (context, index) {
-        return SuggestionsListViewItems(
-          image: model[index].image,
-          title: model[index].title,
-        );
-      },
+    return SizedBox(
+      height: 140, // fixed height avoids unbounded issues
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: model.length,
+        itemBuilder: (context, index) {
+          return SuggestionsListViewItems(
+            image: model[index].image,
+            title: model[index].title,
+          );
+        },
+      ),
     );
   }
 }
