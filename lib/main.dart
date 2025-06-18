@@ -1,7 +1,13 @@
+import 'package:auvnet_ecommerce/core/helpers/service_locator.dart';
 import 'package:auvnet_ecommerce/core/routing/app_router.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  setupServiceLocator();
   runApp(const AuvnetEcommerce());
 }
 

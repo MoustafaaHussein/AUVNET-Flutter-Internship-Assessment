@@ -1,4 +1,4 @@
-import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/register_view_body.dart';
+import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/register_view_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 class RegisterView extends StatelessWidget {
@@ -6,6 +6,6 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: RegisterViewBody());
+    return Scaffold(body: RegisterBlocConsumer());
   }
 }

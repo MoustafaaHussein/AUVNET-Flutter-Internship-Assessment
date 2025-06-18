@@ -1,4 +1,4 @@
-import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/login_view_body.dart';
+import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/login_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -6,6 +6,6 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: LoginViewBody());
+    return Scaffold(body: LoginBlocConsumer());
   }
 }

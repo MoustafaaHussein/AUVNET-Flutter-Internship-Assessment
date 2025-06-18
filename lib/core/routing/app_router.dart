@@ -1,9 +1,14 @@
+import 'package:auvnet_ecommerce/core/helpers/service_locator.dart';
+import 'package:auvnet_ecommerce/features/authentication/domain/use_cases/login_with_email_and_password_usecase.dart';
+import 'package:auvnet_ecommerce/features/authentication/domain/use_cases/register_with_email_and_password_usecase.dart';
+import 'package:auvnet_ecommerce/features/authentication/presentation/manger/bloc/auth_bloc.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/views/login_view.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/views/register_view.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/home_view.dart';
 import 'package:auvnet_ecommerce/features/onboarding/presentation/views/onboard_view.dart';
 import 'package:auvnet_ecommerce/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -38,7 +43,14 @@ abstract class AppRouter {
         path: kLoginView,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: const LoginView(),
+            child: BlocProvider(
+              create:
+                  (context) => AuthBloc(
+                    getIt.get<LoginWithEmailAndPasswordUseCase>(),
+                    getIt.get<RegisterWithEmailAndPasswordUseCase>(),
+                  ),
+              child: const LoginView(),
+            ),
             transitionsBuilder: (
               context,
               animation,
@@ -54,7 +66,14 @@ abstract class AppRouter {
         path: kRegisterView,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: const RegisterView(),
+            child: BlocProvider(
+              create:
+                  (context) => AuthBloc(
+                    getIt.get<LoginWithEmailAndPasswordUseCase>(),
+                    getIt.get<RegisterWithEmailAndPasswordUseCase>(),
+                  ),
+              child: const RegisterView(),
+            ),
             transitionsBuilder: (
               context,
               animation,

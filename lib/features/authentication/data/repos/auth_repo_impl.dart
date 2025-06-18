@@ -1,7 +1,5 @@
 import 'package:auvnet_ecommerce/core/errors/failure.dart';
-import 'package:auvnet_ecommerce/core/services/database_service.dart';
 import 'package:auvnet_ecommerce/core/services/firebase_auth_service.dart';
-import 'package:auvnet_ecommerce/features/authentication/data/models/user_model.dart';
 import 'package:auvnet_ecommerce/features/authentication/domain/entities/user_entity.dart';
 import 'package:auvnet_ecommerce/features/authentication/domain/repos/auth_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -9,8 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepoImpl implements AuthRepo {
   final FirebaseAuthService firebaseAuthService;
-  final DatabaseService databaseService;
-  AuthRepoImpl(this.firebaseAuthService, this.databaseService);
+
+  AuthRepoImpl({required this.firebaseAuthService});
 
   @override
   Future<Either<Failure, UserEntity>> loginWithEmailAndPassword({
@@ -39,7 +37,7 @@ class AuthRepoImpl implements AuthRepo {
       }
 
       // Step 4: Proceed with the login
-      var userEntity = await getUserData(uId: user.uid);
+      var userEntity = UserEntity(email: email, id: user.uid);
 
       return right(userEntity);
     } on FirebaseAuthException catch (e) {
@@ -70,11 +68,5 @@ class AuthRepoImpl implements AuthRepo {
         return left(ServiceFailure(errorMessage: 'unknown-error'));
       }
     }
-  }
-
-  @override
-  Future<UserEntity> getUserData({required String uId}) async {
-    var user = await databaseService.getData(path: 'users', uId: uId);
-    return UserModel.fromJson(user);
   }
 }

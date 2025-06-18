@@ -2,16 +2,21 @@ import 'package:auvnet_ecommerce/core/helpers/app_colors.dart';
 import 'package:auvnet_ecommerce/core/helpers/app_images.dart';
 import 'package:auvnet_ecommerce/core/helpers/constants.dart';
 import 'package:auvnet_ecommerce/core/routing/app_router.dart';
+import 'package:auvnet_ecommerce/features/authentication/presentation/manger/bloc/auth_bloc.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/custom_password_text_field.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/custom_text_field.dart';
 import 'package:auvnet_ecommerce/features/onboarding/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterViewBody extends StatelessWidget {
   RegisterViewBody({super.key});
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  late String email;
+  late String password;
+  late String confirmPassword;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -30,6 +35,9 @@ class RegisterViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomTextField(
+                  onSaved: (value) {
+                    email = value!;
+                  },
                   hintText: 'mail',
                   prefixIcon: FontAwesomeIcons.envelope,
                 ),
@@ -38,14 +46,18 @@ class RegisterViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomPasswordTextFieldChecking(
-                  onSaved: (value) {},
+                  onSaved: (value) {
+                    password = value!;
+                  },
                   hintText: 'Password',
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomPasswordTextFieldChecking(
-                  onSaved: (value) {},
+                  onSaved: (value) {
+                    confirmPassword = value!;
+                  },
                   hintText: 'Confirm Password',
                 ),
               ),
@@ -55,7 +67,22 @@ class RegisterViewBody extends StatelessWidget {
                   WidgetsBinding.instance.addPostFrameCallback((_) {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      // Handle login logic here
+                      if (password != confirmPassword) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Center(
+                              child: Text(
+                                'Passwords do not match please try again',
+                              ),
+                            ),
+                          ),
+                        );
+                        return;
+                      }
+                      // Handle registration logic here
+                      BlocProvider.of<AuthBloc>(
+                        context,
+                      ).add(RegisterEvent(email: email, password: password));
                     }
                   });
                 },
