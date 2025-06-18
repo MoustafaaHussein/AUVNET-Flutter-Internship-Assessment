@@ -46,6 +46,7 @@ class LoginViewBody extends StatelessWidget {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       // Handle login logic here
+                      GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
                     }
                   });
                 },

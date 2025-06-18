@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822389878377",
+    "project_id": "auvnet-ecommerce-22521",
+    "storage_bucket": "auvnet-ecommerce-22521.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822389878377:android:cdc21a03ef48aaa3133cf8",
+        "android_client_info": {
+          "package_name": "com.example.auvnet_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8RuOldffMO3bsNhsYj0QNh4fmGoKqa0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
