@@ -1,3 +1,4 @@
+import 'package:auvnet_ecommerce/features/home/data/models/suggestions_model.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 

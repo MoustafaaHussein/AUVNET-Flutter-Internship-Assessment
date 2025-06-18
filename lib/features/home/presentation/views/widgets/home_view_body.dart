@@ -1,5 +1,8 @@
 import 'package:auvnet_ecommerce/core/helpers/images.dart';
 import 'package:auvnet_ecommerce/features/authentication/presentation/views/widgets/list_view_items.dart';
+import 'package:auvnet_ecommerce/features/home/data/models/suggestions_model.dart';
+import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/code_offers_suggestions.dart';
+import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/suggestions_list_view.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/welcome_header_card.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +49,13 @@ class HomeViewBody extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(height: 16),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: CodeSuggestions(),
+        ),
+        SizedBox(height: 16),
+        Expanded(child: SuggestionsListView(model: suggestions)),
       ],
     );
   }

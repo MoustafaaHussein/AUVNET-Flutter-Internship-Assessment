@@ -89,7 +89,7 @@ abstract class AppRouter {
         path: kHomeView,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: const HomeView(),
+            child: HomeView(),
             transitionsBuilder: (
               context,
               animation,

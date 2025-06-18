@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/colored_background2.png
   static const String assetsImagesColoredBackground2 = "assets/images/colored_background2.png";
 
+  /// Assets for assetsImagesFeedback
+  /// assets/images/feedback.png
+  static const String assetsImagesFeedback = "assets/images/feedback.png";
+
   /// Assets for assetsImagesGroceries
   /// assets/images/groceries.png
   static const String assetsImagesGroceries = "assets/images/groceries.png";
@@ -22,12 +26,32 @@ class Assets {
   /// assets/images/health_wellness.png
   static const String assetsImagesHealthWellness = "assets/images/health_wellness.png";
 
+  /// Assets for assetsImagesMustTires
+  /// assets/images/must_tires.png
+  static const String assetsImagesMustTires = "assets/images/must_tires.png";
+
   /// Assets for assetsImagesNawelSplashIcon
   /// assets/images/nawel_splash_icon.png
   static const String assetsImagesNawelSplashIcon = "assets/images/nawel_splash_icon.png";
 
+  /// Assets for assetsImagesOffersImages
+  /// assets/images/offers_images.png
+  static const String assetsImagesOffersImages = "assets/images/offers_images.png";
+
   /// Assets for assetsImagesProfileAvatar
   /// assets/images/profile_avatar.png
   static const String assetsImagesProfileAvatar = "assets/images/profile_avatar.png";
+
+  /// Assets for assetsImagesSecurityVault
+  /// assets/images/Security_Vault.png
+  static const String assetsImagesSecurityVault = "assets/images/Security_Vault.png";
+
+  /// Assets for assetsImagesStar
+  /// assets/images/star.png
+  static const String assetsImagesStar = "assets/images/star.png";
+
+  /// Assets for assetsImagesTransactionOrders
+  /// assets/images/transaction_orders.png
+  static const String assetsImagesTransactionOrders = "assets/images/transaction_orders.png";
 }
 

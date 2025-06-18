@@ -78,7 +78,7 @@ class _OnboardViewBodyState extends State<OnboardViewBody> {
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: CustomButton(
                 onpressed: () {
-                  GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
+                  GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
                 },
                 text: 'Get Started',
                 buttonColor: const Color(0xFF8900FE),
