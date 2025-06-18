@@ -42,6 +42,22 @@ class Assets {
   /// assets/images/profile_avatar.png
   static const String assetsImagesProfileAvatar = "assets/images/profile_avatar.png";
 
+  /// Assets for assetsImagesResturant1
+  /// assets/images/resturant1.png
+  static const String assetsImagesResturant1 = "assets/images/resturant1.png";
+
+  /// Assets for assetsImagesResturant2
+  /// assets/images/resturant2.png
+  static const String assetsImagesResturant2 = "assets/images/resturant2.png";
+
+  /// Assets for assetsImagesResturant3
+  /// assets/images/resturant3.png
+  static const String assetsImagesResturant3 = "assets/images/resturant3.png";
+
+  /// Assets for assetsImagesResturant4
+  /// assets/images/resturant4.png
+  static const String assetsImagesResturant4 = "assets/images/resturant4.png";
+
   /// Assets for assetsImagesSecurityVault
   /// assets/images/Security_Vault.png
   static const String assetsImagesSecurityVault = "assets/images/Security_Vault.png";

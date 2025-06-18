@@ -1,7 +1,9 @@
+import 'package:auvnet_ecommerce/features/home/data/models/popular_resturants_model.dart';
 import 'package:auvnet_ecommerce/features/home/data/models/suggestions_model.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/code_offers_suggestions.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/custom_items_suggestions.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/offers_page_view.dart';
+import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/popular_resturant_list_view.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/suggestions_list_view.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/welcome_header_card.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,19 @@ class HomeViewBody extends StatelessWidget {
                 SuggestionsListView(model: suggestions),
                 SizedBox(height: 20),
                 OffersPageView(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text(
+                    'Popular restaurants nearby',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'DM Sans',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                PopularResturantListView(model: popularResturants),
               ],
             ),
           ),
