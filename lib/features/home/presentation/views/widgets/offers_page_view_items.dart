@@ -7,10 +7,9 @@ class OffersPageViewItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: ShapeDecoration(
-        color: const Color(0xffFAE9E1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
-      child: Image.asset(image, fit: BoxFit.cover),
+      child: Image.asset(image, fit: BoxFit.fill),
     );
   }
 }

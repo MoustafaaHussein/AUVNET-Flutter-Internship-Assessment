@@ -1,5 +1,5 @@
-import 'package:auvnet_ecommerce/features/home/data/models/suggestions_model.dart';
 import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:auvnet_ecommerce/features/home/presentation/views/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -7,7 +7,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: HomeViewBody());
+    return Scaffold(
+      bottomNavigationBar: CustomNavigationBar(),
+      body: HomeViewBody(),
+    );
   }
 }
 // This file is part of the Auvnet E-commerce project.

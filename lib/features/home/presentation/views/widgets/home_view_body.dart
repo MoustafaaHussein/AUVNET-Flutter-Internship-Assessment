@@ -11,42 +11,45 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WelcomeHeaderCard(),
-              SizedBox(height: 16),
-              // Add more widgets here
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Services:',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                WelcomeHeaderCard(),
+                SizedBox(height: 16),
+                // Add more widgets here
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Services:',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
 
-                    fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
 
-              CustomItemsSuggestions(),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: CodeSuggestions(),
-              ),
-              SizedBox(height: 16),
-              SuggestionsListView(model: suggestions),
-              SizedBox(height: 20),
-              OffersPageView(),
-            ],
+                CustomItemsSuggestions(),
+                SizedBox(height: 16),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: CodeSuggestions(),
+                ),
+                SizedBox(height: 16),
+                SuggestionsListView(model: suggestions),
+                SizedBox(height: 20),
+                OffersPageView(),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
