@@ -12,12 +12,12 @@ class LoginWithEmailAndPasswordUseCase
 
   @override
   Future<Either<Failure, UserEntity>> call([
-    String? parameter,
-    String? secondParamter,
+    String? email,
+    String? password,
   ]) async {
     return await authRepo.loginWithEmailAndPassword(
-      email: parameter!,
-      password: secondParamter!,
+      email: email!,
+      password: password!,
     );
   }
 }
